@@ -6,8 +6,6 @@ public class DataTypeDemo {
         byte  b = 0x10;
         byte  a = 1;
         byte  c = (byte) (b + a);
-
-
     }
 
     public static void shortDemo() {
