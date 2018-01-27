@@ -10,7 +10,7 @@ public class ArraysTasks {
         //bubbleSort(nums);
         System.out.println(getIndexOfMin(nums));
         System.out.println(getIndexOfMax(nums));
-
+        bubbleSort(false,nums);
 
 
 
@@ -50,13 +50,25 @@ public class ArraysTasks {
         }
     }
 
-    private static void bubbleSort(int[] nums){
-        for (int i = 0; i < nums.length - 1; i++){
-            for (int j = 0; j < nums.length-1; j++){
-                if (nums[j+1] < nums[j]){
-                    int temp = nums[j];
-                    nums[j] = nums[j+1];
-                    nums[j+1] = temp;
+    private static void bubbleSort(boolean b, int[] nums){
+        if (b == true) {
+            for (int i = 0; i < nums.length - 1; i++) {
+                for (int j = 0; j < nums.length - 1; j++) {
+                    if (nums[j + 1] < nums[j]) {
+                        int temp = nums[j];
+                        nums[j] = nums[j + 1];
+                        nums[j + 1] = temp;
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < nums.length - 1; i++) {
+                for (int j = 0; j < nums.length - 1; j++) {
+                    if (nums[j + 1] > nums[j]) {
+                        int temp = nums[j];
+                        nums[j] = nums[j + 1];
+                        nums[j + 1] = temp;
+                    }
                 }
             }
         }
