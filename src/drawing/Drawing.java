@@ -3,6 +3,17 @@ package drawing;
 public class Drawing {
 
     public static void main(String[] args) {
+
+        System.out.println("a" + 'b' + 63);
+        System.out.println("a" + 63);
+        System.out.println('b' + new Integer(63));
+        int a = 20;
+        String g = " gg" ;
+
+        System.out.println(g + 4);
+
+        //String ss = 63 + new Integer(10);
+
  //       drawRec(5,6);
         drawTriangleRightside(6,6);
         drawTriangle(6,6);
