@@ -1,6 +1,57 @@
 package datatypes;
 
+
+import com.sun.jmx.remote.internal.ArrayQueue;
+
+import java.util.Queue;
+
 public class DataTypeDemo {
+
+    public static void main(String[] args) {
+
+        byte[] bytes = intToByte(234347766);
+        Integer[][][] ar = new Integer [4][3][3];
+        print(ar);
+
+        System.out.println();
+        for (int i = 0; i < ar.length; i++) {
+            ar[i] = new Integer[i+1][];
+            for (int j = 0; j <ar [i].length ; j++) {
+                ar[i][j] = new Integer[ar[i].length];
+                for (int k = 0; k < ar[i][j].length ; k++) {
+                    ar[i][j][k] = i + j + k;
+                }
+            }
+        }
+        print(ar);
+    }
+
+    static <T> void print(T[][][] a ){
+        for (int i = 0; i < a.length; i++) {
+            print(a[i]);
+            System.out.println();
+        }
+    }
+    static <T> void print(T[][] a ){
+        for (int i = 0; i < a.length; i++) {
+            print(a[i]);
+        }
+    }
+
+    static <T> void print(T[] a) {
+        for (int i = 0; i < a.length; i++){
+            System.out.print(a[i] + " ");
+        }
+        System.out.println();
+    }
+
+    static byte[] intToByte(int a){
+        byte[] result = new byte[4];
+        for (int i = 24, j = 0; i >= 0; i -= 8, j++) {
+            result[j] = (byte)(a >> i);
+        }
+        return result;
+    }
 
     public static void byteDemo() {
         byte  b = 0x10;
@@ -14,7 +65,7 @@ public class DataTypeDemo {
 
     public static void charDemo() {
 
-        char ch = '\u0000';
+        char ch = '\uffff';
         char ch1 = '8';
         byte i = 1;
         ch1 = (char) i;
